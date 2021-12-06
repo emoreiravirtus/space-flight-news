@@ -4,10 +4,10 @@
             <app-article *ngFor="let article of articles" [articleData]="article"></app-article>
         </div>
     </div>
-    <div *ngIf="!searchTerm" #loadingSymbol class="row justify-content-center">
+    <div [hidden]="searchTerm" #loadingSymbol class="row justify-content-center">
         <div class="articles-container__loading-symbol"></div>
     </div>
-    <div *ngIf="searchTerm" class="row justify-content-center">
-        <button class="articles-container__button btn" (click)="searchTerm = ''">Clear Search</button>
+    <div [hidden]="!searchTerm" class="row justify-content-center">
+        <button class="articles-container__button btn" (click)="clearSearch()">Clear Search</button>
     </div>
 </div>

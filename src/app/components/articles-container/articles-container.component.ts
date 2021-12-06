@@ -64,7 +64,7 @@ export class ArticlesContainerComponent implements OnInit, AfterViewInit, OnChan
       response => {
           this.articles = response;
 
-          if (this.articles.length == 0) {
+          if (!response.length) {
 
             const modalRef = this.modalService.open(NotFoundModalComponent, {
               centered: true
@@ -89,6 +89,11 @@ export class ArticlesContainerComponent implements OnInit, AfterViewInit, OnChan
         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
+  }
+
+  clearSearch() {
+    this.searchTerm = '';
+    this.articles = [];
   }
 
 }

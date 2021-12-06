@@ -10,6 +10,7 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
+        cursor: pointer;
     }
 
     &__title {
@@ -20,6 +21,7 @@
         background: linear-gradient(to top left, lighten($primary-color, 5%) 0%, lighten($primary-color, 40%) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        cursor: pointer;
         @include boldFont;
     }
 
