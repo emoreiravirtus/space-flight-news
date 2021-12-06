@@ -2,8 +2,16 @@
 
 #main-page-horizontal-rule {
     background: $primary-gradient;
-    height: 45px;
+    height: 68px;
     width: 100%;
-    clip-path: polygon(30% 0%, 70% 0%, 100% 16%, 100% 100%, 70% 18%, 30% 18%, 0 100%, 0 17%);
-    margin-bottom: -37px;
+    clip-path: polygon(33% 0, 68% 0, 100% 0, 100% 100%, 76% 41%, 25% 41%, 0 100%, 0 0);
+    position: absolute;
+    z-index: 200;
+
+    @include media-breakpoint-up(md) {
+        position: unset;
+        margin-bottom: -37px;
+        height: 45px;
+        clip-path: polygon(30% 0%, 70% 0%, 100% 16%, 100% 100%, 70% 18%, 30% 18%, 0 100%, 0 17%);
+    }
 }
