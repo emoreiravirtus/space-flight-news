@@ -1,0 +1,34 @@
+<div class="container-fluid article-container mt-4 mb-4">
+    <div class="row">
+        <div class="col-5">
+            <img class="article-container__img" [src]="articleData.imageUrl">
+        </div>
+        <div class="col-7">
+            <div class="row article-container__title mb-3">
+                {{ articleData.title }}
+            </div>
+            <div class="row p-0">
+                <div class="col-6 article-container__date p-0">
+                    {{ articleData.publishedAt | date: 'short' }}
+                </div>
+                <div class="col-6 justify-content-center">
+                    <a [href]="articleData.url" target="blank">
+                        <span class="article-container__tag p-2">
+                            {{ articleData.newsSite }}
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="row article-container__text mt-2 pr-2">
+                {{ articleData.summary }}
+            </div>
+            <div class="row my-4 justify-content-start">
+                <div class="col-4 p-0" (click)="openModal()">
+                    <span class="article-container__see-more p-2">
+                        See More
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

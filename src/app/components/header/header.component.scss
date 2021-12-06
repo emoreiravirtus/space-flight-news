@@ -1,0 +1,31 @@
+@import '../../../styles.scss';
+
+.header-container {
+
+    &__img-container {
+
+        &__img {
+            background-image: $logo-gradient, url(../../../assets/rocket-icon.jpg);
+            background-blend-mode: screen;
+            background-size: cover;
+            width: 150px;
+            height: 150px;
+            border: 3px solid lighten($secondary-color, 25%);
+            border-radius: 100%;
+            box-shadow: 0px 0px 30px 8px lighten(rgba($secondary-color, .26), 40%);
+        }
+    }
+
+    &__title-container {
+
+        &__title {
+            background: $secondary-color;
+            background: -webkit-linear-gradient(to top left, lighten($secondary-color, 5%) 0%, lighten($secondary-color, 40%) 100%);
+            background: -moz-linear-gradient(to top left, lighten($secondary-color, 5%) 0%, lighten($secondary-color, 40%) 100%);
+            background: linear-gradient(to top left, lighten($secondary-color, 5%) 0%, lighten($secondary-color, 40%) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            @include boldFont;
+        }
+    }
+}
