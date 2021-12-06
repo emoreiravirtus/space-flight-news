@@ -19,7 +19,10 @@
             </div>
         </div>
     </div>
-    <div class="row my-4 justify-content-center">
+    <div class="row my-4 justify-content-around">
+        <div (click)="close()" class="col-3 modal-container__action-button p-2 text-center">
+            Back
+        </div>
         <a class="col-3 text-center modal-container__action-button p-2" [href]="articleData.url" target="blank">
             Go to the website
         </a>
