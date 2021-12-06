@@ -13,4 +13,8 @@ export class ArticlesService {
   getArticles() {
     return this.http.get(`${environment.apiURL}/articles`, httpOptions);
   }
+
+  getArticleById(id: string) {
+    return this.http.get(`${environment.apiURL}/articles/${id}`, httpOptions);
+  }
 }
