@@ -16,7 +16,7 @@ export class ArticleComponent {
   openModal() {
     const modalRef = this.modal.open(ModalComponent, {
       centered: true,
-      size: 'xl'
+      size: 'lg'
     });
 
     modalRef.componentInstance.articleData = this.articleData;

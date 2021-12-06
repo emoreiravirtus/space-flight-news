@@ -1,5 +1,9 @@
 @import '../styles.scss';
 
 #main-page-horizontal-rule {
-    border: 1px solid rgba($secondary-color, .3);
+    background: $primary-gradient;
+    height: 45px;
+    width: 100%;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 16%, 100% 100%, 70% 18%, 30% 18%, 0 100%, 0 17%);
+    margin-bottom: -37px;
 }

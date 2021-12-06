@@ -46,7 +46,7 @@
         border: 2px solid lighten($secondary-color, 20%);
         border-radius: 20px;
         color: $secondary-color;
-        box-shadow: 0px 0px 30px 8px lighten(rgba($secondary-color, .4), 25%);
+        box-shadow: 0px 0px 30px 8px lighten(rgba($secondary-color, .4), 35%);
         @include uppercaseFont;
         @include boldFont;
         font-size: $small-font-size;
