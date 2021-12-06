@@ -10,8 +10,15 @@ export class ArticlesService {
 
   constructor(private http: HttpClient) { }
 
-  getArticles() {
-    return this.http.get(`${environment.apiURL}/articles`, httpOptions);
+  getArticles(lastIndex?: number) {
+
+    if(lastIndex) {
+      return this.http.get(`${environment.apiURL}/articles?_limit=10&_start=${lastIndex}`, httpOptions);
+    }
+    else {
+      return this.http.get(`${environment.apiURL}/articles?_limit=10`, httpOptions);
+    }
+    
   }
 
   getArticleById(id: string) {

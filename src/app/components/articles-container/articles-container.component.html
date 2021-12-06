@@ -1,7 +1,10 @@
-<div class="container-fluid articles-container">
+<div class="container-fluid articles-container mb-5 pb-5">
     <div class="row justify-content-center">
         <div class="col-8">
             <app-article *ngFor="let article of articles" [articleData]="article"></app-article>
         </div>
+    </div>
+    <div #loadingSymbol class="row justify-content-center">
+        <div class="loading-symbol"></div>
     </div>
 </div>

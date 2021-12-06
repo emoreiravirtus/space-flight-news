@@ -15,7 +15,7 @@ $big-font-size: 22px;
 
 $primary-gradient: linear-gradient(90deg, lighten($primary-color, 25%), lighten($primary-color, 15%), lighten($primary-color, 5%), $primary-color);
 $secondary-gradient: linear-gradient(90deg, lighten($secondary-color, 25%), lighten($secondary-color, 15%), lighten($secondary-color, 5%), $secondary-color);
-$logo-gradient:  linear-gradient(180deg, $secondary-color, lighten($secondary-color, 25%), darken($secondary-color, 10%), $secondary-color);
+$logo-gradient:  linear-gradient(180deg, $primary-color, lighten($primary-color, 25%), darken($primary-color, 10%), $primary-color);
 
 $font-family: 'Roboto Condensed', sans-serif;
 
