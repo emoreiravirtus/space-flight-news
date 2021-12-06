@@ -1,5 +1,8 @@
 <div class="container-fluid header-container mt-3">
-        <div class="row"></div>
+        <div class="row justify-content-center justify-content-md-end m-4 header-container__search-container">
+            <input [(ngModel)]="searchTerm" (keydown.enter)="searchArticlesByTerm()" class="form-control me-2 col-8 col-md-3" type="search" placeholder="Search for news" aria-label="Search">
+            <button class="btn" (click)="searchArticlesByTerm()">Search</button>
+        </div>
         <div class="row justify-content-center">
             <div class="col-6">
                 <div class="row justify-content-center header-container__img-container">

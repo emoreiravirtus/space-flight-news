@@ -1,0 +1,18 @@
+<div class="container-fluid not-found-container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="row justify-content-center not-found-container__img-container">
+                <div class="not-found-container__img-container__img"></div>
+            </div>
+        </div>
+        <div class="col-12 text-center">
+            Nothing found with '{{ searchTerm }}'
+        </div>
+        <div class="col-4 justify-content-center">
+            <div (click)="this.close()" class="not-found-container__tag p-2 text-center my-3">
+                Back
+            </div>
+        </div>
+    </div>
+</div>
+

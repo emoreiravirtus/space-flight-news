@@ -21,7 +21,7 @@ export class ArticlesService {
     
   }
 
-  getArticleById(id: string) {
-    return this.http.get(`${environment.apiURL}/articles/${id}`, httpOptions);
+  getArticlesByTerm(term: string) {
+    return this.http.get(`${environment.apiURL}/articles?title_contains=${term}`, httpOptions);
   }
 }
