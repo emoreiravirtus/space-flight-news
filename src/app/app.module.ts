@@ -11,6 +11,7 @@ import { ArticleComponent } from './components/articles-container/article/articl
 import { ModalComponent } from './components/articles-container/article/modal/modal.component';
 import { FormsModule } from '@angular/forms';
 import { NotFoundModalComponent } from './components/articles-container/not-found-modal/not-found-modal.component';
+import { ErrorModalComponent } from './components/articles-container/error-modal/error-modal.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NotFoundModalComponent } from './components/articles-container/not-foun
     ArticlesContainerComponent,
     ArticleComponent,
     ModalComponent,
-    NotFoundModalComponent
+    NotFoundModalComponent,
+    ErrorModalComponent
   ],
   imports: [
     BrowserModule,

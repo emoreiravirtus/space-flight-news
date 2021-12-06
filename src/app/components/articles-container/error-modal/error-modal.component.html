@@ -1,0 +1,21 @@
+<div class="container-fluid error-container">
+    <div class="row justify-content-center">
+        <div class="col-12 m-3">
+            <div class="row justify-content-center error-container__img-container">
+                <div class="error-container__img-container__img"></div>
+            </div>
+        </div>
+        <div class="col-12 text-center error-container__important">
+            Looks like something went wrong
+        </div>
+        <div class="col-12 m-3 text-center">
+            Error Log: {{ errorMessage }}
+        </div>
+        <div class="col-4 justify-content-center">
+            <div (click)="refresh()" class="error-container__tag p-2 text-center my-3">
+                Try Again
+            </div>
+        </div>
+    </div>
+</div>
+

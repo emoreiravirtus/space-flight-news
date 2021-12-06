@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ArticlesService } from 'src/app/services/articles.service';
+import { ErrorModalComponent } from './error-modal/error-modal.component';
 import { NotFoundModalComponent } from './not-found-modal/not-found-modal.component';
 
 @Component({
@@ -54,7 +55,11 @@ export class ArticlesContainerComponent implements OnInit, AfterViewInit, OnChan
         this.currentlySearching = false;
       },
       error => {
-        
+        const modalRef = this.modalService.open(ErrorModalComponent, {
+          centered: true
+        });
+
+        modalRef.componentInstance.errorMessage = error.message;
       }
     )
   }
@@ -76,7 +81,11 @@ export class ArticlesContainerComponent implements OnInit, AfterViewInit, OnChan
           }
       },
       error => {
+        const modalRef = this.modalService.open(ErrorModalComponent, {
+          centered: true
+        });
 
+        modalRef.componentInstance.errorMessage = error.message;
       }
     )
   }
