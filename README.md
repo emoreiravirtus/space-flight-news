@@ -2,7 +2,7 @@
 
 This is a project that gets articles data from [Space Flight News Api](https://api.spaceflightnewsapi.net/v3/documentation), and present to user.
 
-##Technologies Used
+## Technologies Used
 
 Angular 12, Scss, Karma, Bootstrap.
 
