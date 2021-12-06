@@ -1,5 +1,7 @@
 # SpaceNews
 
+## This project is hosted [HERE](https://space-news-5741a.web.app)
+
 This is a project that gets articles data from [Space Flight News Api](https://api.spaceflightnewsapi.net/v3/documentation), and present to user.
 
 ## Technologies Used
