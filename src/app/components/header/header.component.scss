@@ -2,6 +2,15 @@
 
 .header-container {
 
+    &__search-container {
+        
+        .btn {
+            color: $primary-color;
+            border-color: $primary-color;
+        }
+
+    }
+
     &__img-container {
 
         &__img {

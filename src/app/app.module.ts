@@ -9,6 +9,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { ArticlesContainerComponent } from './components/articles-container/articles-container.component';
 import { ArticleComponent } from './components/articles-container/article/article.component';
 import { ModalComponent } from './components/articles-container/article/modal/modal.component';
+import { FormsModule } from '@angular/forms';
+import { NotFoundModalComponent } from './components/articles-container/not-found-modal/not-found-modal.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { ModalComponent } from './components/articles-container/article/modal/mo
     HeaderComponent,
     ArticlesContainerComponent,
     ArticleComponent,
-    ModalComponent
+    ModalComponent,
+    NotFoundModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

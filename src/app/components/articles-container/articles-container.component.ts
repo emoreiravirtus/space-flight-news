@@ -1,12 +1,14 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ArticlesService } from 'src/app/services/articles.service';
+import { NotFoundModalComponent } from './not-found-modal/not-found-modal.component';
 
 @Component({
   selector: 'app-articles-container',
   templateUrl: './articles-container.component.html',
   styleUrls: ['./articles-container.component.scss']
 })
-export class ArticlesContainerComponent implements OnInit, AfterViewInit {
+export class ArticlesContainerComponent implements OnInit, AfterViewInit, OnChanges {
 
   articles: any;
   lastIndex = 0;
@@ -14,30 +16,33 @@ export class ArticlesContainerComponent implements OnInit, AfterViewInit {
 
   @ViewChild('loadingSymbol') loadingSymbol: ElementRef;
 
-  constructor(private articlesService: ArticlesService) { }
+  @Input() searchTerm: string;
+
+  constructor(private articlesService: ArticlesService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
 
-    this.articlesService.getArticles().subscribe(
-      response => {
-        this.articles = response;
-        this.lastIndex = 10;
-      },
-      error => {
-        
-      }
-    )
+    this.articles = []
+    this.loadMoreArticles();
 
   }
 
   ngAfterViewInit() {
 
     document.addEventListener('scroll', () => {
-      if (this.isInViewport(this.loadingSymbol.nativeElement) && !this.currentlySearching) {
+      if (this.isInViewport(this.loadingSymbol.nativeElement) && !this.currentlySearching && !this.searchTerm) {
         this.currentlySearching = true;
         this.loadMoreArticles();
       }
     });
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+
+    if(changes.searchTerm && this.searchTerm) {
+      this.searchArticlesByTerm();
+    }
 
   }
 
@@ -50,6 +55,28 @@ export class ArticlesContainerComponent implements OnInit, AfterViewInit {
       },
       error => {
         
+      }
+    )
+  }
+
+  searchArticlesByTerm() {
+    this.articlesService.getArticlesByTerm(this.searchTerm).subscribe(
+      response => {
+          this.articles = response;
+
+          if (this.articles.length == 0) {
+
+            const modalRef = this.modalService.open(NotFoundModalComponent, {
+              centered: true
+            });
+            modalRef.componentInstance.searchTerm = this.searchTerm;
+
+            this.lastIndex = 0;
+            this.loadMoreArticles();
+          }
+      },
+      error => {
+
       }
     )
   }
