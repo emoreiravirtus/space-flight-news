@@ -37,6 +37,14 @@ export class ArticlesContainerComponent implements OnInit, AfterViewInit, OnChan
       }
     });
 
+    // Adaptation for mobile users.
+    document.addEventListener('ontouchmove', () => {
+      if (this.isInViewport(this.loadingSymbol.nativeElement) && !this.currentlySearching && !this.searchTerm) {
+        this.currentlySearching = true;
+        this.loadMoreArticles();
+      }
+    });
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
